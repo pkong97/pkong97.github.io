@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+# Jekyll Resume Theme
 
-You can use the [editor on GitHub](https://github.com/pkong97/pkong97.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A mega simple Jekyll theme for displaying a resume/cv online.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The theme follows the default Jekyll build as closely as possible to avoid any dependency issues.
 
-### Markdown
+To customise you just need to fill out the `_config.yml` and the jobs and education `.yml` files in the `_data` directory with your own details.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+You can see a demo of the theme at: [mattcouchman.github.com/jekyll-resume](http://mattcouchman.github.com/jekyll-resume)
 
-```markdown
-Syntax highlighted code block
+Feel free to tear apart and rebuild as you wish.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pkong97/pkong97.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![Screenshot of resume theme](https://github.com/mattcouchman/jekyll-resume/raw/master/img/screen.png)
