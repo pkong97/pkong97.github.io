@@ -1,537 +1,462 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8"
-	<title></title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-	<style type="text/css">
-		*,
-		*::before,
-		*::after{
-
-			box-sizing: border-box;
-		}
-
-		*:focus{
-
-			outline: none;
-		}
-
-		body{
-
-			padding: 0;
-			margin: 0;
-			background: #000;
-			color: white;
-			font-family: "Raleway", sans-serif;
-			
-
-		}
-
-		a{
-			text-decoration: none;
-		}
-
-		img{
-			width: 100%;
-		}
-
-		.home img{
-			width: 100%;
-		
-		}
-
-		.projects img {
-			width: 100%;
-
-		}
-
-		aside{
-			position: fixed;
-			background: #222;
-			top: 0px;
-			left: 0px;
-			width: 120px;
-			height: 100%;
-			overflow: none;
-			z-index: 1;
-			text-align: center;
-			padding: 0;
-		}
-
-		aside img{
-			margin-bottom: -3px;
-
-		}
-
-		.material-icons.md-36{
-			font-size: 36px;
-
-		}
-
-		aside a{
-			display: block;
-			padding: 15px 0;
-			color: white;
-			transition: all 0.35s;
-			text-transform: uppercase;
-			font-size: 0.75em;
-			letter-spacing: 2px;
-
-		}
-
-		aside p{
-			margin: 0;
-			padding: 0;
-
-		}
-
-		aside a:hover{
-			background: #000;
-
-
-		}
-
-		aside nav a:nth-child(2){
-			background: #000;
-
-		}
-
-		aside nav a:nth-child(2):hover{
-			background: #b2b2b2;
-			color: #222;
-
-		}
-
-		main{
-			max-width: 980px;
-			background: #000;
-			margin-left: 20%;
-			padding: 12px 50px 12px 50px;
-
-		}
-
-		header{
-			text-align: center;
-			letter-spacing: 2px;
-
-		}
-
-		header h1{
-			font-weight: bold;
-			font-size: 4em;
-			letter-spacing: 4px;
-
-		}
-
-		header h5{
-			font-weight: 300;
-			font-size: lem;
-			letter-spacing: 4px;
-			color: #b2b2b2;
-		}
-
-		.about,
-		.projects,
-		.contact{
-			line-height: 1.5em;
-			letter-spacing: 1px;
-			font-weight: 300;
-			margin: 300px
-		}
-
-		.about h2,
-		.projects h2,
-		.contact h2{
-			font-weight: 300;
-			text-transform: uppercase;
-			padding-bottom: 10px;
-			margin: 100px 0 0 0;
-			letter-spacing: 4px;
-		}
-
-		.about p{
-			color: #b2b2b2;
-		}
-
-		.about span{
-			font-weight: 600;
-			color: white;
-
-		}
-
-		.about h3{
-			font-weight: 300;
-			margin: 50px 0;
-		}
-
-		.container{
-			width: 100%;
-			background-color: #b2b2b2;
-
-		}
-
-		.skills{
-			text-align: right;
-			padding-right: 20px;
-			line-height: 30px;
-			color: white;
-			background-color: #424242;
-		}
-
-		.python{
-			width: 95%;
-		}
-
-		.projects h3{
-			color: white;
-			font-weight: 300;
-			letter-spacing: 2px;
-		}
-
-		.projects p{
-			font-size: 0.875em;
-		}
-
-		.row-halves{
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			justify-content: space-between;
-			margin: 20px 0;
-			-webkit-flex-pack: justify;
-		}
-
-		.row-halves .col{
-			width: 49%;
-		}
-
-		.col{
-			border: 1px solid #222;
-			background: #222;
-			color: #b2b2b2;
-			padding: 10px;
-		}
-
-		label{
-			color: #b2b2b2;
-
-		}
-
-		form input[type="text"],
-		select,
-		textarea{
-			width: 100%;
-			padding: 12px;
-			border: none;
-			border: 1px solid #222;
-			background: transparent;
-			margin-top: 6px;
-			margin-bottom: 16px;
-			resize: vertical;
-			color: #b2b2b2;
-
-		}
-
-		form input[type="text"]:focus,
-		textarea:focus{
-			outline: none;
-			border: 1px solid #009688;
-
-		}
-
-		input[type="submit"]{
-			background-color: transparent;
-			color: #b2b2b2;
-			text-transform: uppercase;
-			padding: 12px 20px;
-			border: 1px solid #222;
-			cursor: pointer;
-			transition: all 0.35s;
-
-		}
-
-		input[type="submit"]{
-			background-color: transparent;
-			color: #b2b2b2;
-			text-transform: uppercase;
-			padding: 12px 20px;
-			border:; 1px solid;
-			cursor: pointer;
-			transition: all 0.35s;
-
-		}
-
-		input[type="submit"]:hover{
-			background-color: #b2b2b2;
-			color: #222;
-		}
-
-		.contact .container{
-			margin-top: 20px;
-			margin-bottom: 100px;
-			background: transparent;
-			padding: 20px 0;
-
-		}
-
-
-		.footer{
-			border-top: 1px solid #222;
-
-		}
-
-		.top-bar {
-			padding: 20px 0;
-			text-align: center;
-
-		}
-
-		.top-bar a{
-			margin: 10px;
-			font-size: 2em;
-			color: #b2b2b2;
-			transition: all 0.35s;
-			display: inline-block;
-		}
-
-		.top-bar a:hover{
-			transform: scale(1.1);
-			color: #009688;
-
-		}
-
-		.bottom-bar{
-			background: #000;
-			font-size: 0.75em;
-			text-align: center;
-		}
-
-		@media (max-width:; 768px) {
-			.row-halves{
-				display: block;
-			}
-
-			.row-halves .col{
-				width: 100%;
-				margin: 0 0 10px 0;
-			}
-		}
-
-
-		@media (max-width:; 601px) {
-			aside{
-				display: none;
-			}
-
-			main{
-				width: 100%;
-				margin: 0 auto;
-				padding: 12px 25px;
-			}
-
-			header{
-				margin-top: 80px;
-			}
-
-			header h1{
-				font-size: 3em;
-				line-height: 1.4em;
-
-			}
-
-			header h5{
-				font-size: 1em;
-				letter-spacing: 2px;
-			}
-
-			.mobile-nav{
-				position: fixed;
-				width: 100%;
-				display: flex;
-				justify-content: space-around;
-				background: rgba(0,0,0,0.8);
-				z-index: 1;
-			}
-
-			.mobile-nav a{
-				width: 100%;
-				color: #b2b2b2;
-				text-transform: uppercase;
-				font-size: 0.875em;
-				letter-spacing: 2px;
-				text-align: center;
-				padding: 10px 10px;
-				transition: all 0.35s;
-
-			}
-
-			.mobile-nav a:hover{
-				background: #b2b2b2;
-				color: #222;
-
-			}
-
-		}
-
-		@media (min-width: 600px){
-			.mobile-nav{
-				display: none;
-			}
-		}
-
-
-
-	</style>
-
-</head>
-<body>
-<aside>
-<nav>
-	<img src="pat.jpg" alt="">
-	<a href="#home"><i class="material-icons md-36">home</i>
-	<p>Home</p>
-	</a>
-
-	<a href="#about"><i class="material-icons md-36">person</i>
-	<p>About</p>
-	</a>
-
-	<a href="#projects"><i class="material-icons md-36">build</i>
-	<p>Projects</p>
-	</a>
-
-	<a href="#contact"><i class="material-icons md-36">mail</i>
-	<p>Contact</p>
-	</a>
-
-
-
-</nav>
-</aside>
-	<nav class="mobile-nav">
-		
-		<a href="#home">Home</a>
-		<a href="#about">About</a>
-		<a href="#projects">Projects</a>
-		<a href="#contact">Contact</a>
-
-
-	</nav>
-
-	<main>
-		<header class="home" id="home"><br><br>
-			<h1>Hello, I'm Patrick Kong</h1>
-			<h5>UBC Statistics</h5>
-			<img src="pat.jpg" alt="">
-
-		</header>
-	</main>
-
-	<section class="about" id="about">
-		<h2>About me</h2>
-		<p>
-			<span>Hello, I'm patrick</span>I'm a data enthusiast, life long learner, and self-proclaimed pro home cook.
-		</p>
-
-		<p>
-			I have experience with Python, NumPy, Pandas, Scikit-learn, Java, SQL, and Android development.
-		</p>
-
-		<h3>My Skills</h3>
-		<p>Python</p>
-		<div class="container">
-			<div class="skills Python">95%</div>
-		</div>
-
-		<p>Java</p>
-		<div class="container">
-			<div class="skills Java">90%</div>
-		</div>
-
-		<p>SQL</p>
-		<div class="container">
-			<div class="skills SQL">90%</div>
-		</div>
-
-		<p>SQL</p>
-		<div class="container">
-			<div class="skills SQL">90%</div>
-		</div>
-
-		<p>Data Analysis</p>
-		<div class="container">
-			<div class="skills Data Analysis">90%</div>
-		</div>
-
-		<p>R</p>
-		<div class="container">
-			<div class="skills Data Analysis">90%</div>
-		</div>
-
-		<p>Git</p>
-		<div class="container">
-			<div class="skills Data Analysis">90%</div>
-		</div>
-
-		<p>Excel</p>
-		<div class="container">
-			<div class="skills Data Analysis">90%</div>
-		</div>
-
-	</section>
-
-	<section class="projects" id="projects">
-		<h2>Projects</h2>
-
-<div class="row-halves">
-
-	<div class="col">
-		<img src="" alt="">
-		<h3>MMA Predictor</h3>
-		<p>
-			Prediction engine for MMA fights.
-			Skills used:
-		</p>
-		</div>
-
-	<div class="col">
-		<img src="" alt="">
-		<h3>MMA Predictor</h3>
-		<p>
-			Prediction engine for MMA fights.
-		</p>
-	</div>
-</div>
-</section>
-
-<section class="contact" id="contact">
-	<h2>Contact</h2>
-	<div class="container">
-		<form action="">
-			<label for"name">Name</label>
-			<input type="text" id="name" name="name">
-			<label for="email">E-mail</label>
-			<input type="text" id="email" name="email">
-			<label for="message">Message</label>
-			<textarea name="message" id="message"
-			style="height:200px"></textarea>
-			<input type="submit" value="message">
-
-</section>
-	
-	<footer>
-		<section class="top-bar">
-			<a href=""><i class="fab fa-github"></i></a>
-			<a href=""><i class="fab fa-linkedin-in"></i></a>
-		</section>
-
-			<section class="bottom-bar">
-				<p>&copy 2019 | All rights reserved</p>
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script src="https://kit.fontawesome.com/c3d4bdd0ba.js" crossorigin="anonymous"></script>
+		<title>Patrick Kong</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<div class="inner">
+					<h1>Hi, I'm <strong>Patrick</strong>, an aspiring<br />
+					data analyst from Vancouver, BC</a>.</h1>
+					<p>
+					</p>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/pkong97/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/pkong97" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/pyhkong97" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="mailto:kongpatrick97@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="actions special">
+						<li><a href="#one" class="button scrolly">About me</a></li>
+					</ul>
+				</div>
 			</section>
-	</footer>
 
-</body>
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<div class="row gtr-150">
+						<div class="col-6 col-12-medium">
+							<header class="major">
+								<h2>Patrick Kong</h2>
+							</header>
+							<p>I studied Statistics at the University of British Columbia and recently completed the Google Data Analytics Certificate program.</p>
+							<p>I was formerly a chef, running an upscale-casual restaurant in Vancouver. As a chef, I was surrounded by all kinds of data such as sales,
+								food costs, and labour costs. Despite my passion for food, I saw the potential in leveraging data to make business decisions and decided to pursue what I orginally studied.
+								With a reinvigorated passion for data, I aspire to create valuable, data-driven insights that help make sense of all the chaos in our world.</p>
+							<p>In my free time, I love to cook and share it with the world. You can see what I am cooking up next on my <a href="https://www.tiktok.com/@patty.plates" target="_blank">TikTok</a> and <a href="https://www.instagram.com/patty.plates/" target="_blank">Instagram</a>.</p>
+						</div>
+						<div class="col-6 col-12-medium imp-medium">
+							<span class="image fit"><img src="images/headshot-square.jpg" alt="" /></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="main style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>Technical Knowledge</h2>
+					</header>
+					<p></p>
+					<ul class="skills">
+						<li><a class="icon brands alt fa-python fa-2xl" ></a><span><br /> <br />  Python</span></li>
+						<li><a class="icon brands alt fa-r-project fa-2xl"></a><span><br /> <br /> R</span></li>
+						<li><a class="icon solid alt fa-database fa-2xl"></a><span><br /> <br /> SQL</span></li>
+						<li><a class="icon solid alt fas fa-file-excel fa-xl"></a><span><br /> <br /> Excel</span></li>
+						<li><a class="icon brands alt fab fa-html5 fa-2xl"></a><span><br/><br/>HTML</span></li>
+						<li><a class="icon solid alt fas fa-chart-pie fa-xl"></a><span><br /> <br/> Data Vis.</span></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="main style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>Projects</h2>
+					</header>
+					<!-- <p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p> -->
+					<div class="row gtr-150">
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/mma2.png" alt="" /></span>
+							<h3>MMA Fight Predictor</h3>
+							<p>A python data science project that uses machine learning to predict MMA fights.</p>
+							<p>Technologies used: python, scikit-learn, matplotlib, seaborn, beautifulSoup</p>
+							<ul class="actions special">
+								<li><a href="https://nbviewer.org/github/pkong97/mma-predictor/blob/master/workflow.ipynb" target="_blank" class="button">Explore</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/bike.jpg" alt="" /></span>
+							<h3>Cyclistic: Google Data Analytics Case Study</h3>
+							<p>Google Data Analytics Certificate capstone project analyzing a bikeshare company to recommend business decisions.</p>
+							<p>Technologies used: R, ggplot2</p>
+							<ul class="actions special">
+								<li><a href="https://www.kaggle.com/code/pyhkong97/cyclistic-google-data-analytics-case-study" target="_blank" class="button">Explore</a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="images/sales.jpg" alt="" /></span>
+							<h3>Big Mart Sales Case Study</h3>
+							<p>A prediction case study based on the big mart data set from Analytics Vidhya.</p>
+							<p>Technologies used: python, scikit-learn, matplotlib</p>
+							<ul class="actions special">
+								<li><a href="https://nbviewer.org/github/pkong97/big-mart-sales-case-study/blob/main/big-mart-sales.ipynb" target="_blank" class="button">Explore</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		
+		<!-- Four 
+			<section id="four" class="main style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>Ipsum feugiat consequat?</h2>
+					</header>
+					<p>Sed lacus nascetur ac ante amet sapien.</p>
+					<ul class="actions special">
+						<li><a href="#" class="button wide primary">Sign Up</a></li>
+						<li><a href="#" class="button wide">Learn More</a></li>
+					</ul>
+				</div>
+			</section> -->
+
+		<!-- Five 
+			<section id="five" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>Elements</h2>
+					</header>
+
+					<section>
+						<h4>Text</h4>
+						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+						<hr />
+						<header>
+							<h4>Heading with a Subtitle</h4>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<header>
+							<h5>Heading with a Subtitle</h5>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<hr />
+						<h2>Heading Level 2</h2>
+						<h3>Heading Level 3</h3>
+						<h4>Heading Level 4</h4>
+						<h5>Heading Level 5</h5>
+						<h6>Heading Level 6</h6>
+						<hr />
+						<h5>Blockquote</h5>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+						<h5>Preformatted</h5>
+						<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+					</section>
+
+					<section>
+						<h4>Lists</h4>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<h5>Unordered</h5>
+								<ul>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+								<h5>Alternate</h5>
+								<ul class="alt">
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-medium">
+								<h5>Ordered</h5>
+								<ol>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis viverra.</li>
+									<li>Felis enim feugiat.</li>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis lorem.</li>
+									<li>Felis enim et feugiat.</li>
+								</ol>
+								<h5>Icons</h5>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<h5>Actions</h5>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<ul class="actions">
+									<li><a href="#" class="button primary">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions small">
+									<li><a href="#" class="button primary small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+							</div>
+							<div class="col-6 col-12-medium">
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary fit">Default</a></li>
+									<li><a href="#" class="button fit">Default</a></li>
+								</ul>
+								<ul class="actions stacked">
+									<li><a href="#" class="button primary small fit">Small</a></li>
+									<li><a href="#" class="button small fit">Small</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h4>Table</h4>
+						<h5>Default</h5>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+						<h5>Alternate</h5>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+
+					<section>
+						<h4>Buttons</h4>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Primary</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button large">Large</a></li>
+							<li><a href="#" class="button">Default</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions fit">
+							<li><a href="#" class="button fit">Fit</a></li>
+							<li><a href="#" class="button primary fit">Fit</a></li>
+							<li><a href="#" class="button fit">Fit</a></li>
+						</ul>
+						<ul class="actions fit small">
+							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+							<li><a href="#" class="button fit small">Fit + Small</a></li>
+							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+						</ul>
+						<ul class="actions">
+							<li><span class="button primary disabled">Disabled</span></li>
+							<li><span class="button disabled">Disabled</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Form</h4>
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+								</div>
+								<div class="col-12">
+									<select name="demo-category" id="demo-category">
+										<option value="">- Category -</option>
+										<option value="1">Manufacturing</option>
+										<option value="1">Shipping</option>
+										<option value="1">Administration</option>
+										<option value="1">Human Resources</option>
+									</select>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+									<label for="demo-priority-low">Low</label>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-normal" name="demo-priority">
+									<label for="demo-priority-normal">Normal</label>
+								</div>
+								<div class="col-4 col-12-small">
+									<input type="radio" id="demo-priority-high" name="demo-priority">
+									<label for="demo-priority-high">High</label>
+								</div>
+								<div class="col-6 col-12-small">
+									<input type="checkbox" id="demo-copy" name="demo-copy">
+									<label for="demo-copy">Email me a copy</label>
+								</div>
+								<div class="col-6 col-12-small">
+									<input type="checkbox" id="demo-human" name="demo-human" checked>
+									<label for="demo-human">Not a robot</label>
+								</div>
+								<div class="col-12">
+									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+
+					<section>
+						<h4>Image</h4>
+						<h5>Fit</h5>
+						<div class="box alt">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+							</div>
+						</div>
+						<h5>Left &amp; Right</h5>
+						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+					</section>
+
+				</div>
+			</section> -->
+	
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="copyright">
+					<li>&copy; Patrick Kong 2022</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+				</ul>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
